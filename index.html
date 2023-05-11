@@ -1,13 +1,13 @@
 <!doctype html>
 <iframe id="canvas" src="" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>
 <script>
-document.getElementById("canvas").src = prompt("Session ID:");
+const frame = document.getElementById("canvas")
+frame.src = prompt("Session ID:");
 
-canvas.addEventListener("click", async () => {
-  if(!document.pointerLockElement) {
-    await canvas.requestPointerLock({
-      unadjustedMovement: true,
-    });
-  }
+frame.contentDocument.body.addEventListener.onclick = function() {
+  frame.RequestPointerLock();
+}
+document.addEventListener("pointerlockerror", (event) => {
+  window.alert("l bozo");
 });
 </script>
