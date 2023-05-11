@@ -1,6 +1,13 @@
 <!doctype html>
-<iframe id="frame" src="" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>
+<iframe id="canvas" src="" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>
 <script>
-url = prompt("Session ID:");
-document.getElementById("frame").src = "+url+"
+document.getElementById("canvas").src = prompt("Session ID:");
+
+canvas.addEventListener("click", async () => {
+  if(!document.pointerLockElement) {
+    await canvas.requestPointerLock({
+      unadjustedMovement: true,
+    });
+  }
+});
 </script>
